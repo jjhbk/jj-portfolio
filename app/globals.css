@@ -698,6 +698,52 @@ footer {
   transform: translateY(0);
 }
 
+/* ── PROJECT STATUS BADGES ── */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 8px;
+}
+.project-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.project-status.building { color: var(--amber); }
+.project-status.building::before { background: var(--amber); }
+.project-status.archived { color: var(--text-dim); }
+.project-status.archived::before { background: var(--text-dim); }
+
+/* ── NAV SOCIALS ── */
+.nav-socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.nav-social {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+}
+.nav-social:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 16px 20px; }

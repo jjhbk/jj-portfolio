@@ -1,7 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CustomCursor, ScrollReveal, ActiveNav } from "@/components/ClientScripts";
+import { ProjectCard } from "@/components/ProjectCard";
+import { SocialLinks, MiniSocials } from "@/components/SocialLinks";
+import { projects } from "@/data/projects";
 
 export default function Home() {
   const [openExpIndex, setOpenExpIndex] = useState<number>(0);
@@ -9,6 +12,9 @@ export default function Home() {
   const toggleExp = (index: number) => {
     setOpenExpIndex(openExpIndex === index ? -1 : index);
   };
+
+  const featuredProject = projects.find((p) => p.featured);
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <>
@@ -38,9 +44,12 @@ export default function Home() {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-        <a href="mailto:jathin@example.com" className="nav-cta">
-          Hire Me
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <SocialLinks variant="nav" />
+          <a href="mailto:jathin@example.com" className="nav-cta">
+            Hire Me
+          </a>
+        </div>
       </nav>
 
       {/* ── HERO ── */}
@@ -77,6 +86,7 @@ export default function Home() {
               Get in Touch
             </a>
           </div>
+          <MiniSocials />
 
           {/* Terminal */}
           <div className="hero-terminal">
@@ -389,167 +399,10 @@ export default function Home() {
           </div>
 
           <div className="projects-grid reveal">
-            {/* Sahaai - Featured */}
-            <div className="project-card featured">
-              <div>
-                <div className="project-num">PROJECT_01 · FEATURED</div>
-                <h3 className="project-name">Sahaai</h3>
-                <p className="project-desc">
-                  AI Agent Hub & marketplace enabling real-world workflow automation. Combines crypto
-                  agents (blockchain transactions, NFT minting via natural language), browser
-                  automation, and a multi-LLM orchestration backend. USDC escrow and reputation
-                  system built-in for developer monetization.
-                </p>
-                <div className="project-stack">
-                  <span className="project-tech">Langchain</span>
-                  <span className="project-tech">OpenAI</span>
-                  <span className="project-tech">Claude</span>
-                  <span className="project-tech">Solidity</span>
-                  <span className="project-tech">Next.js</span>
-                  <span className="project-tech">Python</span>
-                  <span className="project-tech">Web3</span>
-                  <span className="project-tech">Docker</span>
-                </div>
-              </div>
-              <div>
-                <div className="project-metrics">
-                  <div className="metric">
-                    <span className="metric-val">300+</span>
-                    <br />
-                    <span className="metric-key">User Sessions</span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-val">100+</span>
-                    <br />
-                    <span className="metric-key">Active Users</span>
-                  </div>
-                  <div className="metric">
-                    <span className="metric-val">10+</span>
-                    <br />
-                    <span className="metric-key">Live Workflows</span>
-                  </div>
-                </div>
-                <br />
-                <div
-                  style={{
-                    fontSize: "11px",
-                    color: "var(--text-dim)",
-                    lineHeight: "1.8",
-                    marginTop: "16px",
-                    padding: "16px",
-                    background: "var(--surface2)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  <span className="t-green">▸</span> Multi-agent orchestration
-                  <br />
-                  <span className="t-green">▸</span> Containerized modular backend
-                  <br />
-                  <span className="t-green">▸</span> Web3 wallet auth + chat history
-                  <br />
-                  <span className="t-green">▸</span> Eval harnesses for behavior regression
-                </div>
-              </div>
-            </div>
-
-            {/* Rasphia */}
-            <div className="project-card">
-              <div className="project-num">PROJECT_02</div>
-              <h3 className="project-name">Rasphia</h3>
-              <p className="project-desc">
-                AI-native conversational commerce platform using RAG + multimodal models to search,
-                compare, and purchase across multiple e-commerce sites using natural language.
-              </p>
-              <div className="project-stack">
-                <span className="project-tech">RAG</span>
-                <span className="project-tech">Multimodal</span>
-                <span className="project-tech">OpenAI</span>
-                <span className="project-tech">Gemini</span>
-                <span className="project-tech">Claude</span>
-              </div>
-              <div className="project-metrics">
-                <div className="metric">
-                  <span className="metric-val">3</span>{" "}
-                  <span className="metric-key">LLM Platforms</span>
-                </div>
-                <div className="metric">
-                  <span className="metric-val">Live</span>{" "}
-                  <span className="metric-key">Production</span>
-                </div>
-              </div>
-            </div>
-
-            {/* LLaMA on RISC-V */}
-            <div className="project-card">
-              <div className="project-num">PROJECT_03</div>
-              <h3 className="project-name">LLaMA on RISC-V</h3>
-              <p className="project-desc">
-                Integration of LLaMA into RISC-V architecture enabling deterministic, verifiable LLM
-                computation on-chain. First-of-kind implementation for auditable AI inference.
-              </p>
-              <div className="project-stack">
-                <span className="project-tech">LLaMA</span>
-                <span className="project-tech">RISC-V</span>
-                <span className="project-tech">Docker</span>
-                <span className="project-tech">Cartesi</span>
-              </div>
-              <div className="project-metrics">
-                <div className="metric">
-                  <span className="metric-val">On-chain</span>{" "}
-                  <span className="metric-key">Verifiable LLM</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Vyaan Health */}
-            <div className="project-card">
-              <div className="project-num">PROJECT_04</div>
-              <h3 className="project-name">Vyaan Smart Respirator</h3>
-              <p className="project-desc">
-                Mobile-powered respiratory health monitoring with on-device ML inference.
-                TensorFlow Lite model detecting coughs, wheezing, and breathing anomalies at
-                200–300ms latency.
-              </p>
-              <div className="project-stack">
-                <span className="project-tech">TFLite</span>
-                <span className="project-tech">Edge ML</span>
-                <span className="project-tech">React Native</span>
-                <span className="project-tech">Android</span>
-              </div>
-              <div className="project-metrics">
-                <div className="metric">
-                  <span className="metric-val">35K+</span>{" "}
-                  <span className="metric-key">Units Sold</span>
-                </div>
-                <div className="metric">
-                  <span className="metric-val">92%</span>{" "}
-                  <span className="metric-key">Accuracy</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Cartesi Privado */}
-            <div className="project-card">
-              <div className="project-num">PROJECT_05</div>
-              <h3 className="project-name">Cartesi-Privado ID</h3>
-              <p className="project-desc">
-                Integration tool combining Cartesi&apos;s verifiable compute with decentralized identity
-                (DID), enabling on-chain identity verification workflows. Achieved strong adoption
-                among builders.
-              </p>
-              <div className="project-stack">
-                <span className="project-tech">DID</span>
-                <span className="project-tech">Cartesi</span>
-                <span className="project-tech">Web3</span>
-                <span className="project-tech">Identity</span>
-              </div>
-              <div className="project-metrics">
-                <div className="metric">
-                  <span className="metric-val">High</span>{" "}
-                  <span className="metric-key">Adoption Rate</span>
-                </div>
-              </div>
-            </div>
+            {featuredProject && <ProjectCard project={featuredProject} />}
+            {otherProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -733,37 +586,14 @@ export default function Home() {
             Open to AI engineering, developer advocacy, and technical leadership roles. Especially
             interested in teams working on LLM evaluation, agentic systems, or AI safety tooling.
           </p>
-          <div className="contact-links">
-            <a href="mailto:jathin@example.com" className="contact-link primary">
-              ✉ Email Me
-            </a>
-            <a
-              href="https://linkedin.com/in/jathin-jagannath"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-            >
-              LinkedIn →
-            </a>
-            <a
-              href="https://github.com/jathin-jagannath"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-            >
-              GitHub →
-            </a>
-            <a href="#" className="contact-link">
-              Resume PDF →
-            </a>
-          </div>
+          <SocialLinks variant="contact" />
         </div>
       </section>
 
       {/* ── FOOTER ── */}
       <footer>
         <span>JATHIN JAGANNATH · AI SYSTEMS ENGINEER</span>
-        <span>IIT ROORKEE · 2018</span>
+        <SocialLinks variant="footer" />
         <span style={{ color: "var(--green)" }}>OPEN TO WORK ✓</span>
       </footer>
     </>
