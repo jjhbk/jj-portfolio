@@ -24,13 +24,13 @@ export default function ResumePage() {
           AI Systems Engineer & Developer Advocate
         </div>
         <div className="resume-contact">
-          <span>jathin@example.com</span>
+          <span>jathinjagannath@gmail.com</span>
           <span>|</span>
-          <a href="https://linkedin.com/in/jathin-jagannath">linkedin.com/in/jathin-jagannath</a>
+          <a href="https://www.linkedin.com/in/jathin-jagannath-39670a119/">linkedin.com/in/jathin-jagannath</a>
           <span>|</span>
-          <a href="https://github.com/jathin-jagannath">github.com/jathin-jagannath</a>
+          <a href="https://github.com/jjhbk">github.com/jathin-jagannath</a>
           <span>|</span>
-          <a href="https://twitter.com/jathin_j">@jathin_j</a>
+          <a href="https://x.com/jjhbk26">@jjhbk26</a>
         </div>
       </header>
 
