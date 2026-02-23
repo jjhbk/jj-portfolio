@@ -1,6 +1,12 @@
 "use client";
 
-import { socialLinks, navSocials, footerSocials, SocialLink } from "@/data/socials";
+import {
+  socialLinks,
+  navSocials,
+  footerSocials,
+  resumeLink,
+  SocialLink,
+} from "@/data/socials";
 
 interface SocialLinksProps {
   variant?: "nav" | "contact" | "footer";
@@ -11,19 +17,23 @@ export function SocialLinks({ variant = "contact", filter }: SocialLinksProps) {
   const linksToShow = filter
     ? socialLinks.filter((s) => filter.includes(s.id))
     : variant === "nav"
-    ? socialLinks.filter((s) => navSocials.includes(s.id))
-    : variant === "footer"
-    ? socialLinks.filter((s) => footerSocials.includes(s.id))
-    : socialLinks;
+      ? socialLinks.filter((s) => navSocials.includes(s.id))
+      : variant === "footer"
+        ? socialLinks.filter((s) => footerSocials.includes(s.id))
+        : socialLinks;
 
   if (variant === "contact") {
     return (
       <div className="contact-links">
         {linksToShow.map((social, index) => (
-          <SocialLinkButton key={social.id} social={social} primary={index === 0} />
+          <SocialLinkButton
+            key={social.id}
+            social={social}
+            primary={index === 0}
+          />
         ))}
-        <a href="#" className="contact-link">
-          Resume PDF →
+        <a href="/resume" target={"_blank"} className="contact-link" >
+          {resumeLink.label} ↓
         </a>
       </div>
     );
@@ -48,7 +58,9 @@ export function SocialLinks({ variant = "contact", filter }: SocialLinksProps) {
               gap: "4px",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--green)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-dim)")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.color = "var(--text-dim)")
+            }
             title={social.name}
           >
             <span>{social.icon}</span>
@@ -77,7 +89,9 @@ export function SocialLinks({ variant = "contact", filter }: SocialLinksProps) {
               gap: "4px",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--green)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-dim)")}
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.color = "var(--text-dim)")
+            }
           >
             <span>{social.icon}</span> {social.name}
           </a>

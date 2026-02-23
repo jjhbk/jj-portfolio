@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# resume pdf (generated file)
+public/resume/*.pdf
+!public/resume/README.md
+!public/resume/.gitkeep

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "resume:generate": "bash scripts/create-resume-pdf.sh",
+    "resume:pdf": "npx playwright-core pdf --viewport-size=1280,1024 --wait-for-timeout=3000 http://localhost:3000/resume public/resume/Jathin_Jagannath_Resume.pdf"
   },
   "dependencies": {
     "next": "14.2.5",
@@ -23,5 +25,5 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "type":"module"
+  "type": "module"
 }

@@ -46,7 +46,7 @@ export default function Home() {
         </ul>
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
           <SocialLinks variant="nav" />
-          <a href="mailto:jathin@example.com" className="nav-cta">
+          <a href="jathinjagannath@gmail.com" className="nav-cta">
             Hire Me
           </a>
         </div>
@@ -350,6 +350,8 @@ export default function Home() {
                     <span className="exp-tag">React Native</span>
                     <span className="exp-tag">Android</span>
                     <span className="exp-tag">Hardware</span>
+                    <span className="exp-tag">E-commerce</span>
+                    <span className="exp-tag">B2B</span>
                   </div>
                 </div>
                 <div style={{ textAlign: "right" }}>
@@ -366,17 +368,29 @@ export default function Home() {
                       35,000+ units, ~4M INR revenue
                     </li>
                     <li>
-                      Trained TensorFlow Lite model on Coswara dataset to predict PEFR and detect
-                      coughs/wheezing — achieved <span className="exp-highlight">92% accuracy</span>
+                      Built and scaled <span className="exp-highlight">e-commerce platform and B2B partnerships</span>,
+                      driving customer acquisition and traffic growth while improving retention through
+                      proactive customer support
                     </li>
                     <li>
-                      Deployed ML on-device (Android) with{" "}
-                      <span className="exp-highlight">200–300ms inference latency</span> for
+                      Trained and optimized a <span className="exp-highlight">TensorFlow Lite model</span> using open-source
+                      Coswara dataset to predict respiratory health metrics such as PEFR and detect
+                      coughs, wheezing, and breathing anomalies; achieved{" "}
+                      <span className="exp-highlight">92% accuracy</span> with rigorous validation on diverse datasets
+                    </li>
+                    <li>
+                      Deployed ML model <span className="exp-highlight">on-device (Android)</span> optimized for low-latency
+                      edge inference with <span className="exp-highlight">200–300ms inference latency</span>, enabling
                       real-time respiratory health assessment
                     </li>
                     <li>
-                      Built cross-platform mobile app (React Native) with AQI alerts, filter life
-                      tracking, and personalized breathing exercises
+                      Developed <span className="exp-highlight">cross-platform mobile app</span> using React Native and native
+                      Android modules with AQI-based alerts, filter life tracking, and personalized
+                      breathing exercises
+                    </li>
+                    <li>
+                      Designed <span className="exp-highlight">cloud pipeline</span> for data storage and predictive analytics
+                      enabling longitudinal tracking and early warning systems for respiratory issues
                     </li>
                     <li>
                       Led full interdisciplinary team from concept to launch: software, data

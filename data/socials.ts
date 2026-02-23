@@ -39,10 +39,15 @@ export const socialLinks: SocialLink[] = [
     id: "discord",
     name: "Discord",
     handle: "jathin.ai",
-    url: "https://discord.com/users/jathin.ai",
+    url: "https://discord.com/users/jjhbktal",
     icon: "◆",
   },
 ];
 
 export const navSocials = ["email", "linkedin", "github", "twitter"];
 export const footerSocials = ["linkedin", "github", "twitter", "discord"];
+
+export const resumeLink = {
+  url: "resume",
+  label: "Resume PDF",
+};
